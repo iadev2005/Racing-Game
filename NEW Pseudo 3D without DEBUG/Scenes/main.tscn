@@ -1,29 +1,29 @@
 [gd_scene load_steps=27 format=3 uid="uid://d2glnv32t8md1"]
 
 [ext_resource type="Texture2D" uid="uid://ckhx0sjrn2xu2" path="res://Temp/Background Color.png" id="1_5044a"]
-[ext_resource type="Script" path="res://Scripts/General/Game.gd" id="1_emb0w"]
-[ext_resource type="Script" path="res://Scripts/On Screen Elements/BackgroundEffects.gd" id="2_330he"]
+[ext_resource type="Script" uid="uid://cokkrktkcnfts" path="res://Scripts/General/Game.gd" id="1_emb0w"]
+[ext_resource type="Script" uid="uid://bt8caitgcmtyd" path="res://Scripts/On Screen Elements/BackgroundEffects.gd" id="2_330he"]
 [ext_resource type="Texture2D" uid="uid://cefyc1o8c12cw" path="res://Textures/Tracks/Donut Plains 1 - Sky Line.png" id="3_ht13n"]
-[ext_resource type="Shader" path="res://Scripts/Shaders/ModeSeven.gdshader" id="3_okd74"]
+[ext_resource type="Shader" uid="uid://b87ixjk5kt76r" path="res://Scripts/Shaders/ModeSeven.gdshader" id="3_okd74"]
 [ext_resource type="Texture2D" uid="uid://do4l3t6fepcy8" path="res://Textures/Tracks/Donut Plains 1.png" id="3_q5wi2"]
 [ext_resource type="Texture2D" uid="uid://b2p41drytlkxt" path="res://Textures/Tracks/Donut Plains 1 - Tree Line.png" id="3_vt36i"]
 [ext_resource type="Texture2D" uid="uid://cnp7d7djiq0dd" path="res://Textures/Tracks/Grass_Tile.png" id="4_7c8ey"]
-[ext_resource type="Script" path="res://Scripts/World Elements/Pseudo3D.gd" id="4_s71t4"]
+[ext_resource type="Script" uid="uid://dguogkkiitoy8" path="res://Scripts/World Elements/Pseudo3D.gd" id="4_s71t4"]
 [ext_resource type="Texture2D" uid="uid://bvioi2jfn2hmv" path="res://Textures/Racers/Yoshi Back.png" id="5_lfi8c"]
-[ext_resource type="Script" path="res://Scripts/General/Collision.gd" id="6_q57ja"]
+[ext_resource type="Script" uid="uid://c7tx8yvcn5uc8" path="res://Scripts/General/Collision.gd" id="6_q57ja"]
 [ext_resource type="Texture2D" uid="uid://b56nphrtp74n6" path="res://Textures/Tracks/Donut Plains 1 - Road Type Map.png" id="7_aoipd"]
-[ext_resource type="Script" path="res://Scripts/On Screen Elements/SpriteHandler.gd" id="7_wmybs"]
-[ext_resource type="Script" path="res://Scripts/World Elements/Racers/Player.gd" id="8_lejxo"]
-[ext_resource type="Script" path="res://Scripts/World Elements/Hazard.gd" id="11_gfs62"]
+[ext_resource type="Script" uid="uid://d02p0fmut82re" path="res://Scripts/On Screen Elements/SpriteHandler.gd" id="7_wmybs"]
+[ext_resource type="Script" uid="uid://1tqmka4bw3ft" path="res://Scripts/World Elements/Racers/Player.gd" id="8_lejxo"]
+[ext_resource type="Script" uid="uid://mgjd1a1e81n4" path="res://Scripts/World Elements/Hazard.gd" id="11_gfs62"]
 [ext_resource type="Texture2D" uid="uid://dwtfoow25238t" path="res://Textures/Racers/Particles/Road_Type_Effects_Sheet.png" id="11_w61pk"]
-[ext_resource type="Script" path="res://Scripts/General/AnimationHandler.gd" id="13_6hxns"]
+[ext_resource type="Script" uid="uid://bc34y7jont1w6" path="res://Scripts/General/AnimationHandler.gd" id="13_6hxns"]
 [ext_resource type="Texture2D" uid="uid://d1nvgl514d4vw" path="res://Textures/Hazards/Orange_Pipes.png" id="16_t3snl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lhngl"]
 shader = ExtResource("3_okd74")
-shader_parameter/mapMatrix = Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)
 shader_parameter/trackTexture = ExtResource("3_q5wi2")
 shader_parameter/grassTexture = ExtResource("4_7c8ey")
+shader_parameter/mapMatrix = Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_65qb5"]
 resource_name = "Driving_Off_Road_Anim"
@@ -815,12 +815,12 @@ tracks/18/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2e3ut"]
 _data = {
-"Driving_Off_Road_Anim": SubResource("Animation_65qb5"),
-"Gravel_Anim": SubResource("Animation_mvsyo"),
-"Idle_Off_Road_Anim": SubResource("Animation_j51x3"),
-"RESET": SubResource("Animation_wnosx"),
-"Sink_Anim": SubResource("Animation_r2am7"),
-"Sink_Splash_Anim": SubResource("Animation_37x3c")
+&"Driving_Off_Road_Anim": SubResource("Animation_65qb5"),
+&"Gravel_Anim": SubResource("Animation_mvsyo"),
+&"Idle_Off_Road_Anim": SubResource("Animation_j51x3"),
+&"RESET": SubResource("Animation_wnosx"),
+&"Sink_Anim": SubResource("Animation_r2am7"),
+&"Sink_Splash_Anim": SubResource("Animation_37x3c")
 }
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("_map", "_collision", "_player", "_spriteHandler", "_animationHandler", "_backgroundElements")]
@@ -911,7 +911,7 @@ visible = false
 
 [node name="Effects Player" type="AnimationPlayer" parent="Sprite Handler/Racers/Player/Road Type Effects"]
 libraries = {
-"": SubResource("AnimationLibrary_2e3ut")
+&"": SubResource("AnimationLibrary_2e3ut")
 }
 
 [node name="Right Wheel" type="Sprite2D" parent="Sprite Handler/Racers/Player/Road Type Effects"]
